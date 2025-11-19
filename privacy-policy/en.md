@@ -36,7 +36,7 @@ Your data is never sold, shared, or used for tracking.
 - Personal information (name, email, phone)
 - Identifiers (device ID, advertising ID)
 - Location data
-- Contacts, photos, media, files
+- Contacts, photos, media, or files
 - Usage analytics
 - Any data that can identify you
 
@@ -98,30 +98,49 @@ Interactions with external services are governed by their respective privacy pol
 ## 4. Push Notifications / Silent Background Messages
 
 The app does **not** send visible notifications to users.  
-However, both iOS and Android versions use **silent messages** to update widget data or trigger refreshes.
+However, both the iOS and Android versions use **silent background messages** to update widget data or trigger refreshes.
 
-These messages:
+To deliver these messages, the operating system or Firebase service may generate an **opaque device token** (Apple) or **registration token** (Google):
+
+- These tokens are required by Apple or Google to route background messages.
+- They do **not** identify you personally.
+- They are not used, stored, or collected by the developer.
+- They are not sent to the developer’s backend.
+- They may be shared with Apple or Google solely for message delivery.
+
+Silent background messages:
 
 - contain **no personal information**
-- are **not** device-specific (topic-based)
+- are **not** device-targeted (topic-based only)
 - do **not** display alerts, badges, or sounds
-- are used only to optimize widget refresh timing
+- are used exclusively to optimize widget refresh timing
 
-### 4.1. iOS (APNs Silent Push)
+---
 
-The iOS app uses Apple Push Notification service (APNs) **only** for:
+## 4.1. iOS (APNs Silent Push)
 
-- receiving silent “content-available” updates
+The iOS version uses Apple Push Notification service (APNs) **only** for:
+
+- receiving silent “content-available” messages
 - refreshing widget data in the background
 
-### 4.2. Android (FCM Silent Push)
+iOS may generate a device token to route these messages.  
+This token is handled entirely by Apple’s infrastructure.  
+The developer does **not** access, use, or store this token.
 
-The Android app uses Firebase Cloud Messaging (FCM) **only** for:
+---
 
-- receiving topic-based silent data updates
-- refreshing widget content in the background
+## 4.2. Android (FCM Silent Push)
 
-Neither platform shows any user-visible notifications.
+The Android version uses Firebase Cloud Messaging (FCM) **only** for:
+
+- receiving topic-based silent background messages
+- refreshing widget content automatically
+
+Firebase may generate a registration token as part of FCM functionality.  
+This token is managed by Google and is not used or stored by the developer.
+
+No visible notifications are shown on either platform.
 
 ---
 
@@ -167,7 +186,7 @@ No analytics or tracking services are used.
 
 The app stores only:
 
-- widget settings (language, or UI preferences)
+- widget settings (language, UI preferences)
 - last retrieved schedule data
 
 Stored locally on your device.  
