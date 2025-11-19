@@ -1,7 +1,7 @@
 # Privacy Policy — Paliy Widget App
 
 [English version]
-[Українська версія](paliy-docs/privacy-policy/uk)
+[Українська версія](uk)
 
 _Last updated: 2025-11-19_
 

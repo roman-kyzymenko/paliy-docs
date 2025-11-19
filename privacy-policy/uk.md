@@ -1,6 +1,6 @@
 # Політика конфіденційності — застосунок Віджет Палій
 
-[English version](paliy-docs/privacy-policy/en)
+[English version](en)
 [Українська версія]
 
 _Останнє оновлення: 2025-11-19_
