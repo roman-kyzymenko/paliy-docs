@@ -1,5 +1,8 @@
 # Privacy Policy — Paliy Widget App
 
+[English version]
+[Українська версія](/privacy-policy/uk)
+
 _Last updated: 2025-11-19_
 
 Paliy Widget is a private, non-government project. It is not affiliated with any government body, utility provider, or municipal organization in Ukraine.  
